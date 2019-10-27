@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "b325565c-a125-4f0d-b84f-18d5251bb94e",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "jwtsecret",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"john.doe\",\n\t\"password\":\"thisismysecret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "jwtsecret",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"john.doe\", \"password\": \"thisismysecret\", \"date_of_birth\": \"15/01/1985\", \"name\":\"earn\", \"surename\":\"surename\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerInformation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZSIsImV4cCI6MTU3MjIyMDMyOCwiaWF0IjoxNTcyMjAyMzI4fQ.s5MZ0XBwAkYvGhZhPIiwoyNAwSN3idUQqxpD_LQ5P_Aj9l1l1cZDOzRKn4Y6QTlgZduw15Bc72w31RKN5oa3nQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOrderHistory",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZSIsImV4cCI6MTU3MjIyMjAwMSwiaWF0IjoxNTcyMjA0MDAxfQ.V2AwRCqGrF-nelxwIwe4bsT4p-_lgJZUJDXaW97mMOVDgv3NedE6H4TYknIY3qIDht_CDgLsJVLWKkTaXgj0ZQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AmountForOrders",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZSIsImV4cCI6MTU3MjIyMjAwMSwiaWF0IjoxNTcyMjA0MDAxfQ.V2AwRCqGrF-nelxwIwe4bsT4p-_lgJZUJDXaW97mMOVDgv3NedE6H4TYknIY3qIDht_CDgLsJVLWKkTaXgj0ZQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"orders\": [3, 4]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/users/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huLmRvZSIsImV4cCI6MTU3MjIyMDMyOCwiaWF0IjoxNTcyMjAyMzI4fQ.s5MZ0XBwAkYvGhZhPIiwoyNAwSN3idUQqxpD_LQ5P_Aj9l1l1cZDOzRKn4Y6QTlgZduw15Bc72w31RKN5oa3nQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "aut",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
